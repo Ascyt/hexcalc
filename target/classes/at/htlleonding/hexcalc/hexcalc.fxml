@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:controller="at.htlleonding.hexcalc.controller.HexCalcController"
+      xmlns:fx="http://javafx.com/fxml" spacing="20" alignment="center">
+   <padding>
+      <Insets top="20" right="20" bottom="20" left="20"/>
+   </padding>
+
+   <GridPane alignment="center" hgap="10" vgap="10">
+      <!-- Add RowConstraints to give more space to the input field -->
+      <rowConstraints>
+         <RowConstraints minHeight="50"/>
+      </rowConstraints>
+
+      <TextField fx:id="display" GridPane.columnSpan="4"/>
+
+      <Button text="0" onAction="#handleButtonAction" GridPane.rowIndex="1"/>
+      <Button text="1" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+      <Button text="2" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+      <Button text="3" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+      <Button text="4" onAction="#handleButtonAction" GridPane.rowIndex="2"/>
+      <Button text="5" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+      <Button text="6" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+      <Button text="7" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+      <Button text="8" onAction="#handleButtonAction" GridPane.rowIndex="3"/>
+      <Button text="9" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+      <Button text="A" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+      <Button text="B" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+
+      <Button text="C" onAction="#handleButtonAction" GridPane.rowIndex="4"/>
+      <Button text="D" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+      <Button text="E" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+      <Button text="F" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+
+      <Button text="+" onAction="#handleButtonAction" GridPane.rowIndex="5"/>
+      <Button text="-" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+      <Button text="*" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+      <Button text="/" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+
+      <Button text="^" onAction="#handleButtonAction" GridPane.rowIndex="6"/>
+      <Button text="." onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+      <Button text="(" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+      <Button text=")" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+
+      <Button text="X" onAction="#handleButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+      <Button text="x" onAction="#handleButtonAction" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+      <Button text="=" onAction="#handleButtonAction" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+   </GridPane>
+
+   <ListView fx:id="historyView" prefHeight="400.0" prefWidth="200.0" />
+</HBox>
