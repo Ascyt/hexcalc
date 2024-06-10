@@ -97,6 +97,9 @@ public class HexCalcController {
 
         String value = displayValue.get();
 
+        if (value.isEmpty())
+            return;
+
         String eval = null;
         try {
             eval = Calculator.calculate(value);
