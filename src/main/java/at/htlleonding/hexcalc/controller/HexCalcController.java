@@ -26,6 +26,8 @@ public class HexCalcController {
 
     private boolean inputDisabled;
 
+    private int tryInputDisableCount = 0;
+
     @FXML
     private void initialize() {
         display.textProperty().bindBidirectional(displayValue);
@@ -52,11 +54,19 @@ public class HexCalcController {
         if (inputDisabled)
         {
             if (value.equals("E")) {
-                displayValue.set("");
-                display.setDisable(false);
+                tryInputDisableCount++;
 
-                inputDisabled = false;
-                Database.setBanned(false);
+                if (tryInputDisableCount >= 16) {
+                    displayValue.set("");
+                    display.setDisable(false);
+
+                    inputDisabled = false;
+                    Database.setBanned(false);
+                    tryInputDisableCount = 0;
+                }
+            }
+            else {
+                tryInputDisableCount = 0;
             }
             return;
         }

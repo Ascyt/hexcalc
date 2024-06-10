@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Jun 10 10:45:26 CEST 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0190-0152-dd90-00000e8bd3a0 
+Mon Jun 10 10:50:51 CEST 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-0190-0157-d282-00000e8cd8e8 
 on database directory C:\Users\filip\Downloads\FastWatchTemplate\FastWatchTemplate\db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@50040f0c 
 Loaded from file:/C:/Users/filip/.m2/repository/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar
 java.vendor=Oracle Corporation
@@ -12,8 +12,8 @@ os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Jun 10 10:45:53 CEST 2024: Shutting down Derby engine
+Mon Jun 10 10:51:22 CEST 2024: Shutting down Derby engine
 ----------------------------------------------------------------
-Mon Jun 10 10:45:53 CEST 2024:
-Shutting down instance a816c00e-0190-0152-dd90-00000e8bd3a0 on database directory C:\Users\filip\Downloads\FastWatchTemplate\FastWatchTemplate\db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@50040f0c 
+Mon Jun 10 10:51:22 CEST 2024:
+Shutting down instance a816c00e-0190-0157-d282-00000e8cd8e8 on database directory C:\Users\filip\Downloads\FastWatchTemplate\FastWatchTemplate\db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@50040f0c 
 ----------------------------------------------------------------
