@@ -5,6 +5,7 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -23,7 +24,7 @@ public class HexCalcController {
 
     private String lastEval = "";
 
-    private boolean inputDisabled = false;
+    private boolean inputDisabled;
 
     @FXML
     private void initialize() {
@@ -34,6 +35,14 @@ public class HexCalcController {
 
         // Add mouse click event handler
         historyView.setOnMouseClicked(this::handleHistoryDoubleClick);
+
+        // Load database
+        history.addAll(Database.getAllHistoryItems());
+        inputDisabled = Database.isBanned();
+        display.setDisable(inputDisabled);
+
+        if (inputDisabled)
+            displayValue.set("still banned ¯\\_(ツ)_/¯");
     }
 
     @FXML
@@ -47,6 +56,7 @@ public class HexCalcController {
                 display.setDisable(false);
 
                 inputDisabled = false;
+                Database.setBanned(false);
             }
             return;
         }
@@ -66,6 +76,7 @@ public class HexCalcController {
             case "X":
                 displayValue.set("");
                 history.clear();
+                Database.clearHistory();
                 break;
         }
     }
@@ -82,11 +93,13 @@ public class HexCalcController {
         } catch (DivisionByZeroException e) {
             display.setDisable(true);
             inputDisabled = true;
+            Database.setBanned(true);
 
             showAlert();
 
             displayValue.set("EEEEEEEEEEEEEEEEEEEEEEEE");
             history.clear();
+            Database.clearHistory();
         }
 
         if (value.isEmpty() || eval == null)
@@ -97,7 +110,9 @@ public class HexCalcController {
 
         lastEval = eval;
 
-        history.add(new HistoryItem(value, eval));
+        HistoryItem newItem = new HistoryItem(value, eval);
+        history.add(newItem);
+        Database.addHistoryItem(newItem);
         displayValue.set(eval);
     }
 

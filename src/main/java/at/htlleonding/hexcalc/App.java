@@ -1,6 +1,8 @@
 package at.htlleonding.hexcalc;
 
+import at.htlleonding.hexcalc.controller.Database;
 import at.htlleonding.hexcalc.controller.HexCalcController;
+import at.htlleonding.hexcalc.controller.HistoryItem;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -32,6 +34,8 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        Database.initialize();
         launch(args);
+        Database.close();
     }
 }

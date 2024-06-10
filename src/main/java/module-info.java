@@ -1,6 +1,7 @@
 module at.htlleonding.watch {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
     opens at.htlleonding.hexcalc to javafx.fxml;
     exports at.htlleonding.hexcalc;
